@@ -1,0 +1,55 @@
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>NTY Times</title>
+      <style>
+          [data-theme="dark"] {
+  --primary: #43a047;
+  --primary-hover: #4caf50;
+  --primary-focus: rgba(67, 160, 71, 0.25);
+  --primary-inverse: #FFF;
+}
+
+/* Green (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+      </style>
+  </head>
+  <body>
+    <main class="container">
+    <article>
+        <article>
+            <h1 style="text-align: center">Categories</h1>
+    <div class="grid">
+        <form method="post" action="/update_section">
+            <label for="section">Select a section:</label>
+            <select name="section" id="section">
+                <option value="home">Home</option>
+                <option value="technology">Technology</option>
+                <option value="science">Science</option>
+                <option value="food">Food</option>
+                <option value="movies">Movies</option>
+                <option value="health">Health</option>
+            </select>
+            <button type="submit">Go</button>
+        </form>
+        </article>
+    </div>
+    <article>
+        <h1 class="mt-0 mb-0">Top {{ section_title }} News</h1>
+      <ul>
+          {% for article in articles %}
+              <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+          {% endfor %}
+      </ul>
+    </article>
+    </article>
+    </main>
+  </body>
+</html>
