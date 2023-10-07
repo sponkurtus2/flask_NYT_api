@@ -25,7 +25,7 @@ def get_top_stories():
 
     section_title = section
 
-    articles = data.get('results', [])[:4]
+    articles = data.get('results', [])[:5]
     return render_template('index.html', articles=articles, section_title=section_title)
 
 
