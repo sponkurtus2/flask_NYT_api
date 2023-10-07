@@ -1,3 +1,4 @@
+# To add all the packages requirements, you can use 'pip freeze > requirements.txt'
 from flask import Flask, render_template, request, redirect, url_for
 # To start using this app, you first need to type in the terminal 'pip install requests'
 import requests
